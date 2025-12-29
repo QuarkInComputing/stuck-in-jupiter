@@ -1,0 +1,66 @@
+---
+import {ClientRouter} from "astro:transitions";
+
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+
+const pageTitle = "About Jupiter";
+
+const identity = {
+    nickname: "Quark",
+    realname: "Jack",
+    country: "Scotland"
+};
+
+const hobbies = ["Writing", "Doing silly things with computers", "Goofing", "Many other shenanigans"];
+
+const languages = ["JavScript", "Python", "Java", "C#"];
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+
+        <ClientRouter />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+
+        <title>{pageTitle}</title>
+    </head>
+    <body>
+        <Navigation />
+
+        <h1 class="emphasise">About Me</h1>
+        <h2><i>"Where the hell am I? Who the hell are you?"</i></h2>
+
+        <p>
+            Hey there! My name is {identity.nickname}, or if that is too strange or charming (<i>ha ha</i>) you can call me {identity.realname}.
+            <br>If you want to here someone complain about AI or the horrid state of the world then you've come to the right place. 
+        </p>
+
+        <p><b>Want to reach me?</b></p>
+        <p>Contact me via my discord <i>@quarkinanarchy</i>, make sure you message me saying you came from here or I will probably ignore you!</p>
+
+        <p class="scotland">Love from {identity.country}!</p>
+
+        <div class="boxwrapper">
+            <div class="gridbox">
+                <p>Languages:</p>
+                <ul>
+                    {languages.map((language) => <li>{language}</li>)}
+                </ul>
+            </div>
+            <div class="gridbox">
+                <p>Hobbies:</p>
+                <ul>
+                    {hobbies.map((hobby) => <li>{hobby}</li>)}
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
