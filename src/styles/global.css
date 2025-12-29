@@ -5,9 +5,15 @@ html{
 
 body {
     padding-left: 5vw;
+    padding-right: 5vw;
     padding-top: 2vw;
     color: white;
     border: white dashed 2px;
+}
+
+a {
+    text-decoration: none;
+    color: #0077CC;
 }
 
 .emphasise {
@@ -69,4 +75,53 @@ p {
     background: -webkit-linear-gradient(#FFFFFF, #005EB8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.fig {
+    border: white dashed 1px;
+    display: inline-block;
+    text-align: center;
+}
+
+.fig p {
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+    color: #999999;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.explorebox {
+    border: white dashed 1px;
+    margin-bottom: 1vw;
+}
+
+.bloglist {
+    font-size: 1.3vw;
+}
+
+.bloglist li {
+    list-style: square;
+}
+
+.blogpost h1{
+    color: #CC5500;
+}
+
+.blogpost h2{
+    color: #00713c;
+}
+
+.blogpost li{
+    font-size: 1.1vw;
+}
+
+.blogpost img {
+    width: 20%;
+    height: 20%;
 }

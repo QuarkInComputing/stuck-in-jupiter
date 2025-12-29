@@ -1,8 +1,12 @@
 ---
 import {ClientRouter} from "astro:transitions";
+import {Image} from "astro:assets";
 
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
+import Eighteightthreeone from '../components/eighteightthreeone.astro';
+
+import localJupiter from '../images/Jupiter.webp';
 
 const pageTitle = "Stuck In Jupiter";
 ---
@@ -26,5 +30,21 @@ const pageTitle = "Stuck In Jupiter";
 		<Navigation />
 
 		<h1>You've reached <span class="emphasise">Stuck In Jupiter</span></h1>
+		<h2 id="motd">MOTD: "Why did you leave me :("</h2>
+
+		<p>If you are here to read the rambles then check out the <a href="/blog/">blog</a>.</p>
+		<div class="fig">
+			<Image src={localJupiter} alt="Home"/>
+			<p>Fig 1: Home</p>
+		</div>
+		<p>The world sucks, doesn't it? Maybe life would be better on Earth, at least there you have ground to stand on.</p>
+
+		<div class="center explorebox">
+			<h2 class="center">Explore The <span class="emphasise">Web</span>!</h2>
+			<Eighteightthreeone />
+		</div>
+		
 	</body>
+
+	<script src="../scripts/motd.js"></script>
 </html>

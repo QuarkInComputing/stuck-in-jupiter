@@ -4,11 +4,17 @@ import {ClientRouter} from "astro:transitions";
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 
-const posts = Object.values(import.meta.glob("./posts/*.md", {
-    eager: true
-}));
+const pageTitle = "About Jupiter";
 
-const pageTitle = "Juputer Blog"
+const identity = {
+    nickname: "Quark",
+    realname: "Jack",
+    country: "Scotland"
+};
+
+const hobbies = ["Writing", "Doing silly things with computers", "Goofing", "Many other shenanigans"];
+
+const languages = ["JavScript", "Python", "Java", "C#"];
 ---
 
 <html lang="en">
@@ -29,16 +35,8 @@ const pageTitle = "Juputer Blog"
     <body>
         <Navigation />
 
-        <h1 class="emphasise">Blog Page</h1>
-
-            <ul class="bloglist">
-                {
-                    posts.map((post) =>(
-                        <li>
-                            <a href={post.url}>{post.frontmatter.title}</a>
-                        </li>
-                    ))
-                }
-            </ul>
+        <articl class="blogpost">
+            <slot />
+        </article>
     </body>
 </html>
